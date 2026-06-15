@@ -1,0 +1,7 @@
+manifest_version: 1
+name: "Ludus Community Source"
+description: "Community-built Ludus roles and collections, vendored from their authors' repositories."
+authors:
+  - "The Ludus community"
+homepage: https://github.com/badsectorlabs/ludus-source-community
+license: MIT

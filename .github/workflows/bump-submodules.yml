@@ -1,0 +1,118 @@
+name: bump-submodules
+
+# Advances every vendored submodule (ansible/roles/*, ansible/collections/*)
+# to its upstream's latest release tag — or, for upstreams that don't tag
+# releases, to their default-branch HEAD — and opens a single rolling PR.
+
+on:
+  # Daily sweep: pick up whatever upstreams have released or merged.
+  schedule:
+    - cron: "17 8 * * *" # 08:17 UTC daily (~3am US Eastern)
+  # Manual: run from the Actions tab, or via
+  # `gh workflow run bump-submodules.yml -R badsectorlabs/ludus-source-community`.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: bump-submodules
+  cancel-in-progress: false
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          submodules: recursive
+
+      - name: Bump submodules (latest release tag, else default-branch HEAD)
+        id: bump
+        run: |
+          set -euo pipefail
+
+          paths="$(git config -f .gitmodules --get-regexp '^submodule\..*\.path$' \
+                   | awk '{print $2}' \
+                   | grep -E '^ansible/(roles|collections)/' || true)"
+
+          if [ -z "${paths}" ]; then
+            echo "No ansible/ submodules found in .gitmodules; nothing to do."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          summary=""
+          changed="false"
+
+          for sub in ${paths}; do
+            before="$(git -C "${sub}" rev-parse HEAD)"
+            # --prune-tags drops local tags the upstream deleted, so a
+            # retracted release can't keep winning the version sort.
+            git -C "${sub}" fetch --quiet --tags --force --prune --prune-tags origin
+
+            # Latest release tag: vX.Y.Z or X.Y.Z, highest by version sort.
+            raw="$(git -C "${sub}" tag -l \
+                   | grep -E '^v?[0-9]+\.[0-9]+(\.[0-9]+)*$' \
+                   | sed 's/^v//' \
+                   | sort -V \
+                   | tail -n1 || true)"
+
+            if [ -n "${raw}" ]; then
+              tag="${raw}"
+              if git -C "${sub}" rev-parse -q --verify "refs/tags/v${raw}" >/dev/null; then
+                tag="v${raw}"
+              fi
+              target="$(git -C "${sub}" rev-parse "refs/tags/${tag}^{commit}")"
+              label="\`${tag}\`"
+            else
+              # No release tags: track the upstream's default branch.
+              git -C "${sub}" remote set-head origin --auto >/dev/null
+              target="$(git -C "${sub}" rev-parse origin/HEAD)"
+              label="${target:0:7} (default-branch HEAD)"
+            fi
+
+            if [ "${before}" = "${target}" ]; then
+              echo "${sub}: up to date"
+              continue
+            fi
+
+            git -C "${sub}" checkout --quiet "${target}"
+            git add "${sub}"
+            summary="${summary}- \`${sub}\`: ${before:0:7} → ${label}"$'\n'
+            changed="true"
+            echo "${sub}: ${before:0:7} -> ${label}"
+          done
+
+          echo "changed=${changed}" >> "$GITHUB_OUTPUT"
+          {
+            echo "pr_body<<EOF"
+            if [ "${changed}" = "true" ]; then
+              printf "Automated submodule bump: latest release tag where the upstream tags releases, default-branch HEAD otherwise.\n\n%s" "${summary}"
+            else
+              echo "No submodules needed bumping."
+            fi
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the bump PR
+        if: steps.bump.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
+        with:
+          branch: automation/bump-submodules
+          delete-branch: false
+          base: main
+          commit-message: "chore: bump vendored submodules to latest upstream"
+          title: "chore: bump vendored submodules"
+          body: ${{ steps.bump.outputs.pr_body }}
+          labels: |
+            automation
+            dependencies
+          add-paths: |
+            ansible
+
+      - name: Report when nothing changed
+        if: steps.bump.outputs.changed != 'true'
+        run: echo "All submodules already current — no PR opened."

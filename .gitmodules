@@ -1,0 +1,171 @@
+[submodule "ansible/roles/aleemladha.wazuh_server_install"]
+	path = ansible/roles/aleemladha.wazuh_server_install
+	url = https://github.com/aleemladha/wazuh_server_install.git
+[submodule "ansible/roles/aleemladha.ludus_wazuh_agent"]
+	path = ansible/roles/aleemladha.ludus_wazuh_agent
+	url = https://github.com/aleemladha/ludus_wazuh_agent.git
+[submodule "ansible/roles/aleemladha.ludus_exchange"]
+	path = ansible/roles/aleemladha.ludus_exchange
+	url = https://github.com/aleemladha/ludus_exchange.git
+[submodule "ansible/roles/ludus-local-users"]
+	path = ansible/roles/ludus-local-users
+	url = https://github.com/Cyblex-Consulting/ludus-local-users.git
+[submodule "ansible/roles/ludus-gitlab-ce"]
+	path = ansible/roles/ludus-gitlab-ce
+	url = https://github.com/Cyblex-Consulting/ludus-gitlab-ce.git
+[submodule "ansible/roles/ludus-ad-content"]
+	path = ansible/roles/ludus-ad-content
+	url = https://github.com/Cyblex-Consulting/ludus-ad-content.git
+[submodule "ansible/roles/ludus_tailscale"]
+	path = ansible/roles/ludus_tailscale
+	url = https://github.com/NocteDefensor/ludus_tailscale.git
+[submodule "ansible/roles/ludus_velociraptor_client"]
+	path = ansible/roles/ludus_velociraptor_client
+	url = https://github.com/fmurer/ludus_velociraptor_client.git
+[submodule "ansible/roles/ludus_velociraptor_server"]
+	path = ansible/roles/ludus_velociraptor_server
+	url = https://github.com/fmurer/ludus_velociraptor_server.git
+[submodule "ansible/roles/ludus_caldera_server"]
+	path = ansible/roles/ludus_caldera_server
+	url = https://github.com/frack113/ludus_caldera_server.git
+[submodule "ansible/roles/ludus_caldera_agent"]
+	path = ansible/roles/ludus_caldera_agent
+	url = https://github.com/frack113/ludus_caldera_agent.git
+[submodule "ansible/roles/ludus_aurora_agent"]
+	path = ansible/roles/ludus_aurora_agent
+	url = https://github.com/frack113/ludus_aurora_agent.git
+[submodule "ansible/roles/ludus_filigran_opencti"]
+	path = ansible/roles/ludus_filigran_opencti
+	url = https://github.com/frack113/ludus_filigran_opencti.git
+[submodule "ansible/roles/ludus_ghosts_server"]
+	path = ansible/roles/ludus_ghosts_server
+	url = https://github.com/frack113/ludus_ghosts_server.git
+[submodule "ansible/roles/jasonmull.ludus_ghosts_client"]
+	path = ansible/roles/jasonmull.ludus_ghosts_client
+	url = https://github.com/jasonmull/ludus_ghosts_client.git
+[submodule "ansible/roles/jasonmull.empire_c2_docker"]
+	path = ansible/roles/jasonmull.empire_c2_docker
+	url = https://github.com/jasonmull/empire_docker_ansible.git
+[submodule "ansible/roles/0xRedpoll.ludus_cobaltstrike_teamserver"]
+	path = ansible/roles/0xRedpoll.ludus_cobaltstrike_teamserver
+	url = https://github.com/0xRedpoll/ludus_cobaltstrike_teamserver.git
+[submodule "ansible/roles/0xRedpoll.ludus_mythic_teamserver"]
+	path = ansible/roles/0xRedpoll.ludus_mythic_teamserver
+	url = https://github.com/0xRedpoll/ludus_mythic_teamserver.git
+[submodule "ansible/roles/ludus-ad-vulns"]
+	path = ansible/roles/ludus-ad-vulns
+	url = https://github.com/Primusinterp/ludus-ad-vulns.git
+[submodule "ansible/roles/ludus_juiceshop"]
+	path = ansible/roles/ludus_juiceshop
+	url = https://github.com/xurger/ludus_juiceshop.git
+[submodule "ansible/roles/netpenguins.ludus_sliver"]
+	path = ansible/roles/netpenguins.ludus_sliver
+	url = https://github.com/NetPenguins/ludus_sliver.git
+[submodule "ansible/roles/netpenguins.ludus_redirector"]
+	path = ansible/roles/netpenguins.ludus_redirector
+	url = https://github.com/NetPenguins/ludus_redirector.git
+[submodule "ansible/roles/netpenguins.ludus_k3s"]
+	path = ansible/roles/netpenguins.ludus_k3s
+	url = https://github.com/NetPenguins/ludus_k3s.git
+[submodule "ansible/roles/ludus_badblood"]
+	path = ansible/roles/ludus_badblood
+	url = https://github.com/curi0usJack/ludus_badblood.git
+[submodule "ansible/roles/ludus_splunk_universalforwarder"]
+	path = ansible/roles/ludus_splunk_universalforwarder
+	url = https://github.com/curi0usJack/ludus_splunk_universalforwarder.git
+[submodule "ansible/roles/ludus_splunk"]
+	path = ansible/roles/ludus_splunk
+	url = https://github.com/curi0usJack/ludus_splunk.git
+[submodule "ansible/roles/ludus_adtimeline_syncthing"]
+	path = ansible/roles/ludus_adtimeline_syncthing
+	url = https://github.com/mojeda101/ludus_adtimeline_syncthing.git
+[submodule "ansible/roles/ludus_litterbox"]
+	path = ansible/roles/ludus_litterbox
+	url = https://github.com/professor-moody/ludus_litterbox_role.git
+[submodule "ansible/roles/5tuk0v.ludus_wsus"]
+	path = ansible/roles/5tuk0v.ludus_wsus
+	url = https://github.com/5tuk0v/ludus_wsus.git
+[submodule "ansible/roles/5tuk0v.ludus_vectr"]
+	path = ansible/roles/5tuk0v.ludus_vectr
+	url = https://github.com/5tuk0v/ludus_vectr.git
+[submodule "ansible/roles/5tuk0v.ludus_ghostwriter"]
+	path = ansible/roles/5tuk0v.ludus_ghostwriter
+	url = https://github.com/5tuk0v/ludus_ghostwriter.git
+[submodule "ansible/roles/5tuk0v.ludus_zeek"]
+	path = ansible/roles/5tuk0v.ludus_zeek
+	url = https://github.com/5tuk0v/ludus_zeek.git
+[submodule "ansible/roles/brmkit.ludus_nemesis"]
+	path = ansible/roles/brmkit.ludus_nemesis
+	url = https://github.com/brmkit/ludus_nemesis.git
+[submodule "ansible/roles/brmkit.ludus_guacamole"]
+	path = ansible/roles/brmkit.ludus_guacamole
+	url = https://github.com/brmkit/ludus_guacamole.git
+[submodule "ansible/roles/e1a.ludus_windows_smb_share"]
+	path = ansible/roles/e1a.ludus_windows_smb_share
+	url = https://github.com/E1A/ludus_windows_smb_share.git
+[submodule "ansible/roles/mojeda101.ludus_win_privesc"]
+	path = ansible/roles/mojeda101.ludus_win_privesc
+	url = https://github.com/mojeda101/ludus_win_privesc.git
+[submodule "ansible/roles/whispergate.ludus_nginx_redirector"]
+	path = ansible/roles/whispergate.ludus_nginx_redirector
+	url = https://github.com/Whispergate/ludus_nginx_redirector.git
+[submodule "ansible/roles/bu5h-d.ludus_kubernetes_goat"]
+	path = ansible/roles/bu5h-d.ludus_kubernetes_goat
+	url = https://github.com/bu5h-d/ludus_kubernetes_goat.git
+[submodule "ansible/collections/ludus_adfs"]
+	path = ansible/collections/ludus_adfs
+	url = https://github.com/bagelByt3s/ludus_adfs.git
+[submodule "ansible/collections/ludus_scorch"]
+	path = ansible/collections/ludus_scorch
+	url = https://github.com/professor-moody/ludus_scorch.git
+[submodule "ansible/collections/inf0junki3.ludus"]
+	path = ansible/collections/inf0junki3.ludus
+	url = https://github.com/Inf0Junki3/inf0junki3.ludus.git
+[submodule "ansible/collections/ludus_sccm"]
+	path = ansible/collections/ludus_sccm
+	url = https://github.com/Synzack/ludus_sccm.git
+[submodule "ansible/roles/ludus_exegol"]
+	path = ansible/roles/ludus_exegol
+	url = https://github.com/hugojcqs/ludus_exegol.git
+[submodule "ansible/roles/mojeda101.ludus_fake_configs"]
+	path = ansible/roles/mojeda101.ludus_fake_configs
+	url = https://github.com/mojeda101/ludus_fake_configs.git
+[submodule "ansible/roles/mojeda101.ludus_veeam_vbr"]
+	path = ansible/roles/mojeda101.ludus_veeam_vbr
+	url = https://github.com/mojeda101/ludus_veeam_vbr.git
+[submodule "ansible/roles/mojeda101.ludus_ad_group_all"]
+	path = ansible/roles/mojeda101.ludus_ad_group_all
+	url = https://github.com/mojeda101/ludus_ad_group_all.git
+[submodule "ansible/roles/mojeda101.ludus_win_rearm"]
+	path = ansible/roles/mojeda101.ludus_win_rearm
+	url = https://github.com/mojeda101/ludus_win_rearm.git
+[submodule "ansible/roles/mojeda101.ludus_kali_setup"]
+	path = ansible/roles/mojeda101.ludus_kali_setup
+	url = https://github.com/mojeda101/ludus_kali_setup.git
+[submodule "ansible/roles/mojeda101.ludus_squid_proxy"]
+	path = ansible/roles/mojeda101.ludus_squid_proxy
+	url = https://github.com/mojeda101/ludus_squid_proxy.git
+[submodule "ansible/roles/whispergate.ludus_evilginx_role"]
+	path = ansible/roles/whispergate.ludus_evilginx_role
+	url = https://github.com/Whispergate/ludus_evilginx_role.git
+[submodule "ansible/roles/beardhammer.ludus_rustdesk"]
+	path = ansible/roles/beardhammer.ludus_rustdesk
+	url = https://github.com/Beardhammer/ludus_rustdesk.git
+[submodule "ansible/roles/stishy.ludus_maldev_tools"]
+	path = ansible/roles/stishy.ludus_maldev_tools
+	url = https://github.com/stishy/ludus_maldev_tools.git
+[submodule "ansible/roles/ludus_forgejo"]
+	path = ansible/roles/ludus_forgejo
+	url = https://github.com/Whispergate/ludus_forgejo.git
+[submodule "ansible/roles/ludus_jenkins_role"]
+	path = ansible/roles/ludus_jenkins_role
+	url = https://github.com/Whispergate/ludus_jenkins_role.git
+[submodule "ansible/roles/ludus_thehive"]
+	path = ansible/roles/ludus_thehive
+	url = https://github.com/Whispergate/ludus_thehive.git
+[submodule "ansible/roles/ludus_misp"]
+	path = ansible/roles/ludus_misp
+	url = https://github.com/Whispergate/ludus_misp.git
+[submodule "ansible/roles/ludus_install_spice"]
+	path = ansible/roles/ludus_install_spice
+	url = https://github.com/Croko-fr/ludus_install_spice.git
